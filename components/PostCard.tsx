@@ -1,23 +1,29 @@
 import React from 'react';
 
 interface PostCardProps {
-  id: number;
+  user: { username: string; profilePic: string };
+  image: string;
+  likes: number;
+  comments: number;
 }
 
-const PostCard: React.FC<PostCardProps> = ({ id }) => {
+const PostCard: React.FC<PostCardProps> = ({ user, image, likes, comments }) => {
   return (
-    <div className="border rounded-lg p-4">
-      <img
-        src={`https://via.placeholder.com/150`}
-        alt="Post"
-        className="w-full h-60 object-cover rounded-lg"
-      />
-      <div className="flex items-center space-x-4 mt-4">
-        <button><i className="fa fa-heart text-red-500"></i></button>
-        <button><i className="fa fa-comment"></i></button>
-        <button><i className="fa fa-share"></i></button>
+    <div className="rounded-md shadow-lg bg-white">
+      <div className="flex items-center p-4">
+        <img src={user.profilePic} alt="profile" className="w-10 h-10 rounded-full" />
+        <span className="ml-2 font-semibold">{user.username}</span>
       </div>
-      <p className="mt-2 text-gray-600">This is a sample post description...</p>
+      <img src={image} alt="post" className="w-full" />
+      <div className="flex items-center justify-between px-4 py-2">
+        <div className="flex space-x-2">
+          <span className="icon">❤️</span>
+          <span className="icon">💬</span>
+          <span className="icon">🔗</span>
+        </div>
+        <span>{likes} likes</span>
+      </div>
+      <div className="px-4 py-2 text-gray-600">{comments} comments</div>
     </div>
   );
 };
