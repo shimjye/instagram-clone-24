@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import PostCard from '../components/PostCard';
@@ -9,7 +11,7 @@ const HomePage: React.FC = () => {
       <StoryList />
       <div className="space-y-4">
         {[1, 2, 3].map((postId) => (
-          <PostCard key={postId} id={postId} />
+          <PostCard key={postId} postId={postId} />
         ))}
       </div>
       <Navbar />

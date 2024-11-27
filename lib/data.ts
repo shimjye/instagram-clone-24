@@ -1,11 +1,12 @@
 // lib/data.ts
 export const posts = [
     {
-      id: '1',
+      id: 1,
+      userId: "1",
       username: 'john_doe',
       imageUrl: 'https://via.placeholder.com/150',
       likes: 120,
-      comments: [{ user: 'jane', comment: 'Great post!' }]
+      comments: [{ id: 1, postId: '1', username: 'john_doe', content: 'Great post!' }]
     },
     // 다른 게시물 추가
   ];

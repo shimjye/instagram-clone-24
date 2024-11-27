@@ -1,3 +1,4 @@
+'use client';
 // app/context/UserContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { User } from '../types';
@@ -7,7 +8,7 @@ interface UserContextProps {
   setUser: (user: User | null) => void;
 }
 
-const UserContext = createContext<UserContextProps | undefined>(undefined);
+export const UserContext = createContext<UserContextProps | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);

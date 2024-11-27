@@ -1,6 +1,6 @@
 // /types/index.ts
 export interface Post {
-    id: string;
+    id: number;
     userId: string;
     username: string;
     imageUrl: string;
@@ -9,14 +9,14 @@ export interface Post {
   }
   
   export interface Comment {
-    id: string;
+    id: number;
     postId: string;
     username: string;
     content: string;
   }
   
   export interface User {
-    id: string;
+    id: number;
     username: string;
     avatarUrl: string;
   }
